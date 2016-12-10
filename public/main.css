@@ -1,3 +1,7 @@
+body {
+  background-color: red;
+}
+
 main{
   width: 300px;
   margin: 0 auto;
@@ -15,3 +19,12 @@ input{
   padding: 5px;
 }
 
+h1 {
+  color: white;
+  font-family: Palatino;
+}
+
+p {
+  color: white;
+  font-family: Palatino;
+}

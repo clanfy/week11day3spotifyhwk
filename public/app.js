@@ -26,14 +26,16 @@ var createInfo = function(info){
   var allInfo = info.albums;
   var items = allInfo.items;
   var div = document.getElementById('albums');
-  console.log("allInfo", allInfo);
-  console.log("items",items);
-
   for (i = 0; i < items.length; i++){
+    var pic = allInfo.items[i].images[0].url;
+    var img = document.createElement('img');
+    img.setAttribute('src', pic);
+    img.setAttribute('width', 200);
     var p = document.createElement('p');
     var album = allInfo.items[i].name;
     var artistName = allInfo.items[i].artists[0].name;
     p.innerText = album + " by " + artistName;
+    div.append(img);
     div.appendChild(p);
   }
 };
