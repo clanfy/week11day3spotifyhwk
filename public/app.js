@@ -13,3 +13,27 @@ var makeRequest = function(url, callback){
   request.onload = callback;
   request.send();
 };
+
+var requestComplete = function(){
+  if (this.status !==200) return;
+  var jsonString = this.responseText;
+  var info = JSON.parse(jsonString);
+  console.log(info.albums.items);
+  createInfo(info);
+};
+
+  var createInfo = function(info){
+    var items = info.albums.items;
+    var div = document.getElementById('albums');
+
+    var names = items.forEach(function(item){
+      var p = document.createElement('p');
+      p.innerText = item.name;
+      div.appendChild(p);
+    });
+    console.log(names);
+
+
+
+
+  };
